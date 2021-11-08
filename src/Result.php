@@ -28,13 +28,24 @@ class Result
     /**
      * @return Result<T>
      */
-    public static function ok(mixed $value)
+    public static function ok(mixed $value = null)
     {
         return new Result(
             true,
             null,
             $value
         );
+    }
+
+    public static function combine(Result ...$results)
+    {
+        foreach ($results as $result) {
+            if ($result->isFailure()) {
+                return $result;
+            }
+        }
+
+        return Result::ok();
     }
 
     /**

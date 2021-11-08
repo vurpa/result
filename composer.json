@@ -1,0 +1,16 @@
+{
+    "name": "vurpa/result",
+    "autoload": {
+        "psr-4": {
+            "Vurpa\\Result\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vurpa\\Result\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
